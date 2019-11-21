@@ -28,8 +28,8 @@ class SystemTrayIcon(QtWidgets.QSystemTrayIcon):
 		if q.text() == "About":
 			msg = QMessageBox()
 			msg.setTextFormat(Qt.RichText)
-			msg.setText("This app is created by Michiel Jacobs <br> Visit <a href='https://github.com/MichielJacobs/Lenovo-Touch-Screen-on-off'>my github page</a> for more information. <br/><div>Icons made by <a href='https://www.flaticon.com/authors/pixel-perfect' title='Pixel perfect'>Pixel perfect</a> from <a href='https://www.flaticon.com/' title='Flaticon'>www.flaticon.com</a></div>")
-			msg.setWindowTitle("About Lenovo Touch Screen ON-OFF")
+			msg.setText("This app is created by Michiel Jacobs <br> Visit <a href='https://github.com/MichielJacobs/TouchScreenToggle'>my github page</a> for more information. <br/><div>Icons made by <a href='https://www.flaticon.com/authors/pixel-perfect' title='Pixel perfect'>Pixel perfect</a> from <a href='https://www.flaticon.com/' title='Flaticon'>www.flaticon.com</a></div>")
+			msg.setWindowTitle("About TouchScreenToggle")
 			msg.exec_()
 
 		if q.text() == "Touch Screen ON":
@@ -58,8 +58,6 @@ def main(image):
 
 
 
-if __name__ == '__main__':	
-	#Icon made by Pixel perfect from www.flaticon.com
-	#<div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+if __name__ == '__main__':
 	on="img/on.svg"
 	main(on)
