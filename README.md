@@ -1,5 +1,6 @@
-# Touchscreen toggle
-Small program to easaly switch the touch screen on/off.
+# TouchScreenToggle
+## About
+Small windows program to easaly switch the touchscreen ON or OFF.
 
-Created for:
+## Supported laptops
 Lenovo ThinkPad X1 Yoga 3rd
