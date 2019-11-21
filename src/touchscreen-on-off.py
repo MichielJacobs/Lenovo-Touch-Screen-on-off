@@ -28,7 +28,7 @@ class SystemTrayIcon(QtWidgets.QSystemTrayIcon):
 		if q.text() == "About":
 			msg = QMessageBox()
 			msg.setTextFormat(Qt.RichText)
-			msg.setText("This app is created by Michiel Jacobs <br> Visit <a href='https://github.com/MichielJacobs/TouchScreenToggle'>my github page</a> for more information. <br/><div>Icons made by <a href='https://www.flaticon.com/authors/pixel-perfect' title='Pixel perfect'>Pixel perfect</a> from <a href='https://www.flaticon.com/' title='Flaticon'>www.flaticon.com</a></div>")
+			msg.setText("This app is created by Michiel Jacobs <br> Visit <a href='https://github.com/MichielJacobs/TouchScreenToggle'>my github page</a> for more information. <br/><div>Icons made by <a href='https://www.flaticon.com/authors/pixel-perfect' title='Pixel perfect'>Pixel perfect</a> from <a href='https://www.flaticon.com/' title='Flaticon'>www.flaticon.com</a></div><div>This application is using <a href='https://www.nirsoft.net/utils/device_manager_view.html'>DevManView v1.60</a> from <a href='https://www.nirsoft.net/about_nirsoft_freeware.html'>NirSoft</a></div>")
 			msg.setWindowTitle("About TouchScreenToggle")
 			msg.exec_()
 
