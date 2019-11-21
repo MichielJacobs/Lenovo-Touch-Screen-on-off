@@ -1,0 +1,1 @@
+start devmanview-x64/devmanview.exe /disable "HID-compliant touch screen"
