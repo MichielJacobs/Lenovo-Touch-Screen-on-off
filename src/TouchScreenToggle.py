@@ -1,6 +1,6 @@
 import sys
-import datetime
 import os
+import configparser
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 from PyQt5.QtCore import Qt
@@ -13,6 +13,7 @@ class SystemTrayIcon(QtWidgets.QSystemTrayIcon):
 		menu = QtWidgets.QMenu(parent)
 		onAction = menu.addAction("Touch Screen ON")
 		offAction = menu.addAction("Touch Screen OFF")
+		menu.addSeparator()
 		aboutAction = menu.addAction("About")
 		menu.addSeparator()
 		exitAction = menu.addAction("Exit")
@@ -39,12 +40,14 @@ class SystemTrayIcon(QtWidgets.QSystemTrayIcon):
 			self.turnTouchOff()
 
 	def turnTouchOn(self):
-		os.system('start devmanview-x64/DevManView.exe /enable "HID-compliant touch screen"')
-		self.setIcon(QtGui.QIcon("img/on.svg"))
+		onCommand = 'start devmanview-x64/DevManView.exe /enable "' + touchScreenName + '"'
+		os.system(onCommand)
+		self.setIcon(QtGui.QIcon("img/" + iconColor + "on.svg"))
 
 	def turnTouchOff(self):
-		os.system('start devmanview-x64/DevManView.exe /disable "HID-compliant touch screen"')
-		self.setIcon(QtGui.QIcon("img/off.svg"))
+		offCommand='start devmanview-x64/DevManView.exe /disable "' + touchScreenName + '"'
+		os.system(offCommand)
+		self.setIcon(QtGui.QIcon("img/" + iconColor + "off.svg"))
 
 
 
@@ -59,5 +62,11 @@ def main(image):
 
 
 if __name__ == '__main__':
-	on="img/on.svg"
+	#get configuration and set it
+	configParser = configparser.RawConfigParser()
+	configParser.read("config.txt")
+	iconColor = configParser.get('TouchScreenToggle', 'IconColor')
+	touchScreenName = configParser.get('TouchScreenToggle', 'TouchScreenName')
+
+	on="img/" + iconColor + "on.svg"
 	main(on)
